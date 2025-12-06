@@ -1,0 +1,33 @@
+# Kanshi configuration for Hyprland
+# Place this file at: ~/.config/kanshi/config
+
+# Profile for laptop only (undocked)
+profile laptop {
+    output eDP-1 enable mode 2560x1600@165Hz position 0,0 scale 1.333333
+}
+
+# Profile for laptop + external monitor via DisplayPort
+profile docked {
+    output eDP-1 disable
+    # output DP-1 enable mode 2560x1440@144Hz position 2048,0 scale 1.25
+    output DP-2 enable mode 2560x1440@144Hz position 2048,0 scale 1.25
+}
+
+# Profile for external monitor only (laptop lid closed or disabled)
+profile external-only {
+    output eDP-1 disable
+    output DP-1 enable mode 2560x1440@144Hz position 0,0 scale 1
+}
+
+# Alternative docked profile with laptop on right side
+profile docked-reversed {
+    output DP-1 enable mode 2560x1440@144Hz position 0,0 scale 1
+    output eDP-1 enable mode 2560x1600@165Hz position 2560,0 scale 1
+}
+
+# Alternative with laptop display above external monitor
+profile docked-stacked {
+    output eDP-1 enable mode 2560x1600@165Hz position 0,0 scale 1
+    output DP-1 enable mode 2560x1440@144Hz position 0,1600 scale 1
+}
+
