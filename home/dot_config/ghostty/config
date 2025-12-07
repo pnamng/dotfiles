@@ -50,7 +50,7 @@ window-padding-y = 10
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = Andromeda
+theme = Gruvbox Dark Hard
 
 freetype-load-flags = no-force-autohint
 
