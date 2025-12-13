@@ -1,0 +1,254 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "GeistMono Nerd Font", "Font Awesome 7 Free", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(15, 15, 25, 0.9);
+    color: #e0e0e0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    margin: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #666666;
+    background-color: transparent;
+    /* border-radius: 8px; */
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 191, 255, 0.2);
+    color: #00bfff;
+}
+
+#workspaces button.active {
+    background: #00bfff;
+    color: #0a0a0f;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: #ff2a6d;
+    color: #0a0a0f;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    0% {
+        opacity: 1;
+    }
+}
+
+#submap {
+    padding: 0 10px;
+    color: #ffd93d;
+    background: rgba(255, 217, 61, 0.1);
+    /* border-radius: 8px; */
+    margin: 0 4px;
+}
+
+#clock {
+    padding: 0 15px;
+    color: #ffffff;
+    background: rgba(0, 191, 255, 0.15);
+    /* border-radius: 8px; */
+    font-weight: 600;
+}
+
+#clock:hover {
+    background: rgba(0, 191, 255, 0.25);
+}
+
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#battery,
+#battery.bat2,
+#idle_inhibitor,
+#tray {
+    padding: 0 10px;
+    margin: 0 2px;
+    background: rgba(30, 30, 45, 0.6);
+    /* border-radius: 8px; */
+    transition: all 0.3s ease;
+}
+
+#cpu {
+    color: #00d9ff;
+    border-bottom: 2px solid #00d9ff;
+}
+
+#cpu:hover {
+    background: rgba(0, 217, 255, 0.2);
+}
+
+#memory {
+    color: #05ffa1;
+    border-bottom: 2px solid #05ffa1;
+}
+
+#memory:hover {
+    background: rgba(5, 255, 161, 0.2);
+}
+
+#temperature {
+    color: #ff9e64;
+    border-bottom: 2px solid #ff9e64;
+}
+
+#temperature:hover {
+    background: rgba(255, 158, 100, 0.2);
+}
+
+#temperature.critical {
+    color: #ff2a6d;
+    border-bottom: 2px solid #ff2a6d;
+    animation: blink 1s ease-in-out infinite;
+}
+
+#backlight {
+    color: #ffd93d;
+    border-bottom: 2px solid #ffd93d;
+}
+
+#backlight:hover {
+    background: rgba(255, 217, 61, 0.2);
+}
+
+#battery {
+    color: #05ffa1;
+    border-bottom: 2px solid #05ffa1;
+}
+
+#battery:hover {
+    background: rgba(5, 255, 161, 0.2);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #05ffa1;
+    border-bottom: 2px solid #05ffa1;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffd93d;
+    border-bottom: 2px solid #ffd93d;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff2a6d;
+    border-bottom: 2px solid #ff2a6d;
+    animation: blink 1s ease-in-out infinite;
+}
+
+#network {
+    color: #00bfff;
+    border-bottom: 2px solid #00bfff;
+}
+
+#network:hover {
+    background: rgba(0, 191, 255, 0.2);
+}
+
+#network.disconnected {
+    color: #ff2a6d;
+    border-bottom: 2px solid #ff2a6d;
+}
+
+#pulseaudio {
+    color: #d946ef;
+    border-bottom: 2px solid #d946ef;
+}
+
+#pulseaudio:hover {
+    background: rgba(217, 70, 239, 0.2);
+}
+
+#pulseaudio.muted {
+    color: #666666;
+    border-bottom: 2px solid #666666;
+}
+
+#idle_inhibitor {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+#idle_inhibitor:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#idle_inhibitor.activated {
+    color: #ffd93d;
+    border-bottom: 2px solid #ffd93d;
+}
+
+#tray {
+    padding: 0 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #ff2a6d;
+}
+
+tooltip {
+    background: rgba(15, 15, 25, 0.95);
+    border: 1px solid #666666;
+    /* border-radius: 8px; */
+}
+
+tooltip label {
+    color: #e0e0e0;
+}
+
+#power-profiles-daemon {
+    padding: 8px;
+    color: #00d9ff;
+    border-bottom: 2px solid #00d9ff;
+}
+
+#power-profiles-daemon:hover {
+    background: rgba(0, 217, 255, 0.2);
+}
+
+#power-profiles-daemon.performance {
+    color: #ff2a6d;
+    border-bottom: 2px solid #ff2a6d;
+}
+
+#power-profiles-daemon.balanced {
+    color: #00bfff;
+    border-bottom: 2px solid #00bfff;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #05ffa1;
+    border-bottom: 2px solid #05ffa1;
+}
