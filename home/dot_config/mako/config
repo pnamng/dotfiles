@@ -1,7 +1,7 @@
-# Mako configuration with vibrant color scheme
+# Mako configuration with Gruvbox Dark Hard theme
 
 # Font
-font=JetBrainsMono Nerd Font 11
+font=GeistMono Nerd Font 11
 
 # Dimensions
 width=350
@@ -12,15 +12,15 @@ padding=15
 # Position
 anchor=top-right
 
-# Colors - matching vibrant waybar theme
-background-color=#0f0f19e6
-text-color=#e0e0e0
-border-color=#00bfff
+# Colors - Gruvbox Dark Hard theme
+background-color=#1d2021e6
+text-color=#ebdbb2
+border-color=#83a598
 border-size=2
 border-radius=8
 
 # Progress bar
-progress-color=over #00d9ff
+progress-color=over #8ec07c
 
 # Icons
 icon-path=/usr/share/icons/hicolor
@@ -36,36 +36,36 @@ max-visible=5
 
 # Urgency: Low
 [urgency=low]
-background-color=#0f0f19e6
-text-color=#e0e0e0
-border-color=#05ffa1
+background-color=#1d2021e6
+text-color=#ebdbb2
+border-color=#b8bb26
 default-timeout=3000
 
 # Urgency: Normal
 [urgency=normal]
-background-color=#0f0f19e6
-text-color=#e0e0e0
-border-color=#00bfff
+background-color=#1d2021e6
+text-color=#ebdbb2
+border-color=#83a598
 default-timeout=5000
 
 # Urgency: Critical
 [urgency=critical]
-background-color=#1e1e2de6
-text-color=#ffffff
-border-color=#ff2a6d
+background-color=#1d2021e6
+text-color=#ebdbb2
+border-color=#fb4934
 border-size=3
 default-timeout=0
 ignore-timeout=1
 
 # Application specific (examples)
 [app-name="Spotify"]
-border-color=#05ffa1
+border-color=#b8bb26
 
 [app-name="Discord"]
-border-color=#d946ef
+border-color=#d3869b
 
 [app-name="Volume"]
-border-color=#d946ef
+border-color=#d3869b
 
 [app-name="Brightness"]
-border-color=#ffd93d
+border-color=#fabd2f

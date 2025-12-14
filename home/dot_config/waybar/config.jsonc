@@ -1,14 +1,14 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 36,
+  "height": 40,
   "spacing": 4,
   "modules-left": ["hyprland/workspaces", "hyprland/submap", "clock"],
   "modules-center": [],
   "modules-right": [
+    "power-profiles-daemon",
     "tray",
     "pulseaudio",
-    "power-profiles-daemon",
     "network",
     "cpu",
     "memory",
@@ -40,8 +40,9 @@
   },
 
   "clock": {
-    "format": "{:%A, %B %d, %Y (%R)}",
-    "format-alt": "{:%Y-%m-%d  %H:%M:%S}",
+    "justify": "center", 
+    "format": "{:%Y-%m-%d\n%H:%M:%S}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "timezone": "Asia/Ho_Chi_Minh",
     "calendar": {

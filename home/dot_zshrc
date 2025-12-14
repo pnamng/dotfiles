@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export QML_IMPORT_PATH="/usr/lib/qt6/qml"
 
 # theme 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="echnoster"
 
 # plugins
 plugins=(git)
