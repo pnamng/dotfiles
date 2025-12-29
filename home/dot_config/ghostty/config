@@ -27,8 +27,8 @@
 # # separated by equals signs.
 font-family = GeistMono Nerd Font
 font-size = 11
-window-padding-x = 10
-window-padding-y = 10
+# window-padding-x = 10
+# window-padding-y = 10
 #
 # # Spacing around the equals sign does not matter.
 # # All of these are identical:
@@ -51,6 +51,7 @@ window-padding-y = 10
 # resize-overlay-duration = 4s 200ms
 
 theme = Gruvbox Dark Hard
+background-opacity = 0.8 
 
 freetype-load-flags = no-force-autohint
 

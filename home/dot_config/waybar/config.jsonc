@@ -3,7 +3,7 @@
   "position": "bottom",
   "height": 40,
   "spacing": 4,
-  "modules-left": ["hyprland/workspaces", "hyprland/submap", "clock"],
+  "modules-left": ["hyprland/workspaces", "clock", "hyprland/submap"],
   "modules-center": [],
   "modules-right": [
     "power-profiles-daemon",
@@ -30,7 +30,7 @@
 
   "hyprland/submap": {
     "format": "✌️ {}",
-    "max-length": 8,
+    "max-length": 12,
     "tooltip": false,
   },
 
