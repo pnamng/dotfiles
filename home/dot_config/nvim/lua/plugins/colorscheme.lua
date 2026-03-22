@@ -1,14 +1,14 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "Shatur/neovim-ayu",
     opts = {
-      contrast = "hard",
+      mirage = false,
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "ayu",
     },
   },
 }

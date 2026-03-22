@@ -1,7 +1,7 @@
-# Mako configuration with Gruvbox Dark Hard theme
+# Mako configuration - Maple Mono + Ayu Dark theme
 
 # Font
-font=GeistMono Nerd Font 11
+font=Maple Mono 11
 
 # Dimensions
 width=350
@@ -12,15 +12,15 @@ padding=15
 # Position
 anchor=top-right
 
-# Colors - Gruvbox Dark Hard theme
-background-color=#1d2021e6
-text-color=#ebdbb2
-border-color=#83a598
+# Colors - Ayu Dark theme
+background-color=#0d1017e6
+text-color=#bfbdb6
+border-color=#39bae6
 border-size=2
 border-radius=8
 
 # Progress bar
-progress-color=over #8ec07c
+progress-color=over #7fd962
 
 # Icons
 icon-path=/usr/share/icons/hicolor
@@ -36,36 +36,36 @@ max-visible=5
 
 # Urgency: Low
 [urgency=low]
-background-color=#1d2021e6
-text-color=#ebdbb2
-border-color=#b8bb26
+background-color=#0d1017e6
+text-color=#bfbdb6
+border-color=#7fd962
 default-timeout=3000
 
 # Urgency: Normal
 [urgency=normal]
-background-color=#1d2021e6
-text-color=#ebdbb2
-border-color=#83a598
+background-color=#0d1017e6
+text-color=#bfbdb6
+border-color=#39bae6
 default-timeout=5000
 
 # Urgency: Critical
 [urgency=critical]
-background-color=#1d2021e6
-text-color=#ebdbb2
-border-color=#fb4934
+background-color=#0d1017e6
+text-color=#bfbdb6
+border-color=#f07178
 border-size=3
 default-timeout=0
 ignore-timeout=1
 
-# Application specific (examples)
+# Application specific
 [app-name="Spotify"]
-border-color=#b8bb26
+border-color=#e6b450
 
 [app-name="Discord"]
-border-color=#d3869b
+border-color=#d2a6ff
 
 [app-name="Volume"]
-border-color=#d3869b
+border-color=#d2a6ff
 
 [app-name="Brightness"]
-border-color=#fabd2f
+border-color=#e6b450
