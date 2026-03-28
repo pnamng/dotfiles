@@ -1,6 +1,7 @@
 return {
   {
     "Shatur/neovim-ayu",
+    main = "ayu",
     opts = {
       mirage = false,
     },

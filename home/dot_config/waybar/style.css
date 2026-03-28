@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background: rgba(13, 16, 23, 0.92);
+    background: transparent;
     color: #bfbdb6;
     padding: 4px 0;
     transition-property: background-color;
@@ -142,7 +142,7 @@ window#waybar.hidden {
 
 #cpu {
     color: #39bae6;
-    padding: 0 10px;
+    padding: 0 6px;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -155,7 +155,7 @@ window#waybar.hidden {
 
 #memory {
     color: #7fd962;
-    padding: 0 10px;
+    padding: 0 6px;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -168,7 +168,7 @@ window#waybar.hidden {
 
 #pulseaudio {
     color: #d2a6ff;
-    padding: 0 10px;
+    padding: 0 6px;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -185,7 +185,7 @@ window#waybar.hidden {
 
 #backlight {
     color: #e6b450;
-    padding: 0 10px;
+    padding: 0 6px;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -198,7 +198,7 @@ window#waybar.hidden {
 
 #battery {
     color: #95e6cb;
-    padding: 0 10px;
+    padding: 0 6px;
     background: transparent;
     transition: all 0.3s ease;
 }

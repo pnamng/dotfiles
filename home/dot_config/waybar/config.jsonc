@@ -6,7 +6,7 @@
   "modules-left": ["hyprland/workspaces", "clock", "hyprland/submap"],
   "modules-center": [],
   "modules-right": [
-    // "power-profiles-daemon",
+    "power-profiles-daemon",
     "tray",
     "group/power",
     "network",
@@ -155,14 +155,14 @@
   },
 
   "power-profiles-daemon": {
-    "format": "{icon} | {profile}",
+    "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      "default": "󰾅",
+      "performance": "󱐋",
+      "balanced": "󰾅",
+      "power-saver": "󰌪"
     }
   }
 }
