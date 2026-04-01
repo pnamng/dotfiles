@@ -1,0 +1,28 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": true,
+  "project_panel": {
+    "entry_spacing": "standard"
+  },
+  "ui_font_family": "SF Pro",
+  "buffer_font_family": "Maple Mono",
+  "icon_theme": "Catppuccin Latte",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+}

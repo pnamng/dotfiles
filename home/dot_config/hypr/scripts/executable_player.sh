@@ -15,12 +15,15 @@ prev) playerctl -p "$PLAYER" previous ;;
 play-pause) playerctl -p "$PLAYER" play-pause ;;
 esac
 
-# Always show notification after action
-sleep 0.3 # brief wait for playerctl to update state
-
-STATUS=$(playerctl -p "$PLAYER" status 2>/dev/null)
+# Wait for player to settle after action
+for _ in $(seq 1 10); do
+  sleep 0.1
+  STATUS=$(playerctl -p "$PLAYER" status 2>/dev/null)
+  [ "$STATUS" != "Stopped" ] && break
+done
 TITLE=$(playerctl -p "$PLAYER" metadata title 2>/dev/null)
 ARTIST=$(playerctl -p "$PLAYER" metadata artist 2>/dev/null)
+ART_URL=$(playerctl -p "$PLAYER" metadata mpris:artUrl 2>/dev/null)
 
 case "$STATUS" in
 Playing) ICON="▶" ;;
@@ -33,4 +36,19 @@ BODY="$ICON $STATUS"
 [ -n "$ARTIST" ] && BODY="$BODY\n$ARTIST"
 [ -n "$TITLE" ] && BODY="$BODY — $TITLE"
 
-notify-send "$PLAYER" "$(echo -e "$BODY")" -i audio-x-generic -t 2000
+# Resolve album art icon
+NOTIF_ICON="audio-x-generic"
+if [ -n "$ART_URL" ]; then
+  if [[ "$ART_URL" == file://* ]]; then
+    NOTIF_ICON="${ART_URL#file://}"
+  elif [[ "$ART_URL" == http* ]]; then
+    CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/player-art"
+    mkdir -p "$CACHE_DIR"
+    CACHE_FILE="$CACHE_DIR/$(echo "$ART_URL" | md5sum | cut -d' ' -f1).jpg"
+    [ -f "$CACHE_FILE" ] || curl -fsSL "$ART_URL" -o "$CACHE_FILE" 2>/dev/null
+    [ -f "$CACHE_FILE" ] && NOTIF_ICON="$CACHE_FILE"
+  fi
+fi
+
+DISPLAY_NAME="${PLAYER%%.*}"
+notify-send "$DISPLAY_NAME" "$(echo -e "$BODY")" -i "$NOTIF_ICON" -t 2000

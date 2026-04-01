@@ -20,7 +20,7 @@
 
   "group/power": {
     "orientation": "horizontal",
-    "modules": ["pulseaudio", "backlight", "battery", "battery#bat2"],
+    "modules": ["wireplumber", "backlight", "battery", "battery#bat2"],
   },
 
   "hyprland/workspaces": {
@@ -126,9 +126,9 @@
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
 
-  "pulseaudio": {
+  "wireplumber": {
     "scroll-step": 5,
-    "format": "{icon} {volume}%",
+    "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{icon}󰂯 {volume}%",
     "format-bluetooth-muted": "󰂲 {icon}",
     "format-muted": "󰖁 {volume}%",

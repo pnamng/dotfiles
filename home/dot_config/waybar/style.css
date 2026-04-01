@@ -164,20 +164,20 @@ window#waybar.hidden {
     color: #aad94c;
 }
 
-/* ── Pulseaudio (inside #power group) ──────────────────────── */
+/* ── Wireplumber (inside #power group) ──────────────────────── */
 
-#pulseaudio {
+#wireplumber {
     color: #d2a6ff;
     padding: 0 6px;
     background: transparent;
     transition: all 0.3s ease;
 }
 
-#pulseaudio:hover {
+#wireplumber:hover {
     color: #e0c4ff;
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
     color: #3d4554;
 }
 
