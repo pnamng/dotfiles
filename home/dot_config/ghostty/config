@@ -1,5 +1,5 @@
 font-family = Maple Mono
-font-size = 11
+font-size = 10
 window-padding-x = 10
 window-padding-y = 10
 
@@ -9,5 +9,5 @@ background-opacity = 0.8
 freetype-load-flags = no-force-autohint
 
 adjust-cell-width = "-5%"
-# adjust-cell-height = "5%"
+adjust-cell-height = "-5%"
 keybind = shift+enter=text:\x1b\r

@@ -11,56 +11,219 @@ declare -A THEME_NAMES=(
   [catppuccin-mocha]="Catppuccin Mocha"
   [everforest-dark]="Everforest Dark"
   [oxocarbon-dark]="Oxocarbon Dark"
+  [gruvbox-light]="Gruvbox Light"
 )
 
 # Hex (no #)
-declare -A BG=([ayu-dark]="0d1017" [catppuccin-mocha]="1e1e2e" [everforest-dark]="2d353b" [oxocarbon-dark]="161616")
-declare -A FG=([ayu-dark]="bfbdb6" [catppuccin-mocha]="cdd6f4" [everforest-dark]="d3c6aa" [oxocarbon-dark]="f2f4f8")
-declare -A PRIMARY=([ayu-dark]="39bae6" [catppuccin-mocha]="89b4fa" [everforest-dark]="7fbbb3" [oxocarbon-dark]="78a9ff")
-declare -A ACCENT=([ayu-dark]="e6b450" [catppuccin-mocha]="f9e2af" [everforest-dark]="dbbc7f" [oxocarbon-dark]="f1c21b")
-declare -A COMMENT=([ayu-dark]="626a73" [catppuccin-mocha]="6c7086" [everforest-dark]="859289" [oxocarbon-dark]="525252")
-declare -A RED=([ayu-dark]="f07178" [catppuccin-mocha]="f38ba8" [everforest-dark]="e67e80" [oxocarbon-dark]="ff8389")
-declare -A GREEN=([ayu-dark]="7fd962" [catppuccin-mocha]="a6e3a1" [everforest-dark]="a7c080" [oxocarbon-dark]="42be65")
-declare -A PURPLE=([ayu-dark]="d2a6ff" [catppuccin-mocha]="cba6f7" [everforest-dark]="d699b6" [oxocarbon-dark]="be95ff")
-declare -A TEAL=([ayu-dark]="95e6cb" [catppuccin-mocha]="94e2d5" [everforest-dark]="83c092" [oxocarbon-dark]="3ddbd9")
-declare -A ORANGE=([ayu-dark]="ff8f40" [catppuccin-mocha]="fab387" [everforest-dark]="e69875" [oxocarbon-dark]="ff832b")
-declare -A SURFACE=([ayu-dark]="3d4554" [catppuccin-mocha]="313244" [everforest-dark]="3d484d" [oxocarbon-dark]="393939")
-declare -A PRIMARY_LIGHT=([ayu-dark]="59c2ff" [catppuccin-mocha]="b4d0ff" [everforest-dark]="a5d1cc" [oxocarbon-dark]="97c1ff")
-declare -A ACCENT_LIGHT=([ayu-dark]="ffb454" [catppuccin-mocha]="ffeecf" [everforest-dark]="ecd6a7" [oxocarbon-dark]="f5d365")
-declare -A GREEN_LIGHT=([ayu-dark]="aad94c" [catppuccin-mocha]="ccf0c7" [everforest-dark]="c1d9a8" [oxocarbon-dark]="6fdc8c")
-declare -A PURPLE_LIGHT=([ayu-dark]="e0c4ff" [catppuccin-mocha]="e5d4ff" [everforest-dark]="e8c3d8" [oxocarbon-dark]="d0b0ff")
-declare -A TEAL_LIGHT=([ayu-dark]="b3edd8" [catppuccin-mocha]="c2f0ea" [everforest-dark]="a8d6b4" [oxocarbon-dark]="6ddcdc")
-declare -A FUZZEL_SEL=([ayu-dark]="25334099" [catppuccin-mocha]="45475aaa" [everforest-dark]="4a555baa" [oxocarbon-dark]="39393999")
-declare -A HYPR_INACTIVE=([ayu-dark]="1e2530aa" [catppuccin-mocha]="2a2a3eaa" [everforest-dark]="3d484daa" [oxocarbon-dark]="1e1e1eaa")
-declare -A GHOSTTY_THEME=([ayu-dark]="Gruvbox Dark Hard" [catppuccin-mocha]="Catppuccin Mocha" [everforest-dark]="Everforest Dark Hard" [oxocarbon-dark]="Oxocarbon")
-declare -A WALLPAPER=([ayu-dark]="nebula.png" [catppuccin-mocha]="bluesky.png" [everforest-dark]="island_lowlight.png" [oxocarbon-dark]="black_sand.jpg")
+declare -A BG=(
+  [ayu-dark]="0d1017"
+  [catppuccin-mocha]="1e1e2e"
+  [everforest-dark]="2d353b"
+  [oxocarbon-dark]="161616"
+  [gruvbox-light]="fbf1c7"
+)
+declare -A FG=(
+  [ayu-dark]="bfbdb6"
+  [catppuccin-mocha]="cdd6f4"
+  [everforest-dark]="d3c6aa"
+  [oxocarbon-dark]="f2f4f8"
+  [gruvbox-light]="3c3836"
+)
+declare -A PRIMARY=(
+  [ayu-dark]="39bae6"
+  [catppuccin-mocha]="89b4fa"
+  [everforest-dark]="7fbbb3"
+  [oxocarbon-dark]="78a9ff"
+  [gruvbox-light]="458588"
+)
+declare -A ACCENT=(
+  [ayu-dark]="e6b450"
+  [catppuccin-mocha]="f9e2af"
+  [everforest-dark]="dbbc7f"
+  [oxocarbon-dark]="f1c21b"
+  [gruvbox-light]="d79921"
+)
+declare -A COMMENT=(
+  [ayu-dark]="626a73"
+  [catppuccin-mocha]="6c7086"
+  [everforest-dark]="859289"
+  [oxocarbon-dark]="525252"
+  [gruvbox-light]="928374"
+)
+declare -A RED=(
+  [ayu-dark]="f07178"
+  [catppuccin-mocha]="f38ba8"
+  [everforest-dark]="e67e80"
+  [oxocarbon-dark]="ff8389"
+  [gruvbox-light]="cc241d"
+)
+declare -A GREEN=(
+  [ayu-dark]="7fd962"
+  [catppuccin-mocha]="a6e3a1"
+  [everforest-dark]="a7c080"
+  [oxocarbon-dark]="42be65"
+  [gruvbox-light]="98971a"
+)
+declare -A PURPLE=(
+  [ayu-dark]="d2a6ff"
+  [catppuccin-mocha]="cba6f7"
+  [everforest-dark]="d699b6"
+  [oxocarbon-dark]="be95ff"
+  [gruvbox-light]="b16286"
+)
+declare -A TEAL=(
+  [ayu-dark]="95e6cb"
+  [catppuccin-mocha]="94e2d5"
+  [everforest-dark]="83c092"
+  [oxocarbon-dark]="3ddbd9"
+  [gruvbox-light]="689d6a"
+)
+declare -A ORANGE=(
+  [ayu-dark]="ff8f40"
+  [catppuccin-mocha]="fab387"
+  [everforest-dark]="e69875"
+  [oxocarbon-dark]="ff832b"
+  [gruvbox-light]="d65d0e"
+)
+declare -A SURFACE=(
+  [ayu-dark]="3d4554"
+  [catppuccin-mocha]="313244"
+  [everforest-dark]="3d484d"
+  [oxocarbon-dark]="393939"
+  [gruvbox-light]="ebdbb2"
+)
+declare -A PRIMARY_LIGHT=(
+  [ayu-dark]="59c2ff"
+  [catppuccin-mocha]="b4d0ff"
+  [everforest-dark]="a5d1cc"
+  [oxocarbon-dark]="97c1ff"
+  [gruvbox-light]="83a598"
+)
+declare -A ACCENT_LIGHT=(
+  [ayu-dark]="ffb454"
+  [catppuccin-mocha]="ffeecf"
+  [everforest-dark]="ecd6a7"
+  [oxocarbon-dark]="f5d365"
+  [gruvbox-light]="fabd2f"
+)
+declare -A GREEN_LIGHT=(
+  [ayu-dark]="aad94c"
+  [catppuccin-mocha]="ccf0c7"
+  [everforest-dark]="c1d9a8"
+  [oxocarbon-dark]="6fdc8c"
+  [gruvbox-light]="b8bb26"
+)
+declare -A PURPLE_LIGHT=(
+  [ayu-dark]="e0c4ff"
+  [catppuccin-mocha]="e5d4ff"
+  [everforest-dark]="e8c3d8"
+  [oxocarbon-dark]="d0b0ff"
+  [gruvbox-light]="d3869b"
+)
+declare -A TEAL_LIGHT=(
+  [ayu-dark]="b3edd8"
+  [catppuccin-mocha]="c2f0ea"
+  [everforest-dark]="a8d6b4"
+  [oxocarbon-dark]="6ddcdc"
+  [gruvbox-light]="8ec07c"
+)
+declare -A FUZZEL_SEL=(
+  [ayu-dark]="25334099"
+  [catppuccin-mocha]="45475aaa"
+  [everforest-dark]="4a555baa"
+  [oxocarbon-dark]="39393999"
+  [gruvbox-light]="d5c4a1aa"
+)
+declare -A HYPR_INACTIVE=(
+  [ayu-dark]="1e2530aa"
+  [catppuccin-mocha]="2a2a3eaa"
+  [everforest-dark]="3d484daa"
+  [oxocarbon-dark]="1e1e1eaa"
+  [gruvbox-light]="ebdbb2aa"
+)
+declare -A GHOSTTY_THEME=(
+  [ayu-dark]="Gruvbox Dark Hard"
+  [catppuccin-mocha]="Catppuccin Mocha"
+  [everforest-dark]="Everforest Dark Hard"
+  [oxocarbon-dark]="Oxocarbon"
+  [gruvbox-light]="Gruvbox Light"
+)
+declare -A WALLPAPER=(
+  [ayu-dark]="cabin.png"
+  [catppuccin-mocha]="bluesky.png"
+  [everforest-dark]="island_lowlight.png"
+  [oxocarbon-dark]="black_sand.jpg"
+  [gruvbox-light]="garden.jpg"
+)
 
 # RGB decimal triplets (for rgba() in hyprlock + waybar)
-declare -A BG_RGB=([ayu-dark]="13, 16, 23" [catppuccin-mocha]="30, 30, 46" [everforest-dark]="45, 53, 59" [oxocarbon-dark]="22, 22, 22")
-declare -A FG_RGB=([ayu-dark]="191, 189, 182" [catppuccin-mocha]="205, 214, 244" [everforest-dark]="211, 198, 170" [oxocarbon-dark]="242, 244, 248")
-declare -A PRIMARY_RGB=([ayu-dark]="57, 186, 230" [catppuccin-mocha]="137, 180, 250" [everforest-dark]="127, 187, 179" [oxocarbon-dark]="120, 169, 255")
-declare -A ACCENT_RGB=([ayu-dark]="230, 180, 80" [catppuccin-mocha]="249, 226, 175" [everforest-dark]="219, 188, 127" [oxocarbon-dark]="241, 194, 27")
-declare -A COMMENT_RGB=([ayu-dark]="98, 106, 115" [catppuccin-mocha]="108, 112, 134" [everforest-dark]="133, 146, 137" [oxocarbon-dark]="82, 82, 82")
-declare -A RED_RGB=([ayu-dark]="240, 113, 120" [catppuccin-mocha]="243, 139, 168" [everforest-dark]="230, 126, 128" [oxocarbon-dark]="255, 131, 137")
-declare -A SURFACE_RGB=([ayu-dark]="57, 62, 78" [catppuccin-mocha]="49, 50, 68" [everforest-dark]="61, 72, 77" [oxocarbon-dark]="57, 57, 57")
+declare -A BG_RGB=(
+  [ayu-dark]="13, 16, 23"
+  [catppuccin-mocha]="30, 30, 46"
+  [everforest-dark]="45, 53, 59"
+  [oxocarbon-dark]="22, 22, 22"
+  [gruvbox-light]="251, 241, 199"
+)
+declare -A FG_RGB=(
+  [ayu-dark]="191, 189, 182"
+  [catppuccin-mocha]="205, 214, 244"
+  [everforest-dark]="211, 198, 170"
+  [oxocarbon-dark]="242, 244, 248"
+  [gruvbox-light]="60, 56, 54"
+)
+declare -A PRIMARY_RGB=(
+  [ayu-dark]="57, 186, 230"
+  [catppuccin-mocha]="137, 180, 250"
+  [everforest-dark]="127, 187, 179"
+  [oxocarbon-dark]="120, 169, 255"
+  [gruvbox-light]="69, 133, 136"
+)
+declare -A ACCENT_RGB=(
+  [ayu-dark]="230, 180, 80"
+  [catppuccin-mocha]="249, 226, 175"
+  [everforest-dark]="219, 188, 127"
+  [oxocarbon-dark]="241, 194, 27"
+  [gruvbox-light]="215, 153, 33"
+)
+declare -A COMMENT_RGB=(
+  [ayu-dark]="98, 106, 115"
+  [catppuccin-mocha]="108, 112, 134"
+  [everforest-dark]="133, 146, 137"
+  [oxocarbon-dark]="82, 82, 82"
+  [gruvbox-light]="146, 131, 116"
+)
+declare -A RED_RGB=(
+  [ayu-dark]="240, 113, 120"
+  [catppuccin-mocha]="243, 139, 168"
+  [everforest-dark]="230, 126, 128"
+  [oxocarbon-dark]="255, 131, 137"
+  [gruvbox-light]="204, 36, 29"
+)
+declare -A SURFACE_RGB=(
+  [ayu-dark]="57, 62, 78"
+  [catppuccin-mocha]="49, 50, 68"
+  [everforest-dark]="61, 72, 77"
+  [oxocarbon-dark]="57, 57, 57"
+  [gruvbox-light]="235, 219, 178"
+)
 
 # ─── Fuzzel menu ─────────────────────────────────────────────────────────────
 
 MENU_ITEMS=""
-for key in ayu-dark catppuccin-mocha everforest-dark oxocarbon-dark; do
+for key in ayu-dark catppuccin-mocha everforest-dark oxocarbon-dark gruvbox-light; do
   label="${THEME_NAMES[$key]}"
   [[ "$key" == "$CURRENT_THEME" ]] && label+=" (active)"
   MENU_ITEMS+="$label\n"
 done
 
 SELECTED=$(printf "%b" "$MENU_ITEMS" | sed '/^$/d' |
-  fuzzel --dmenu --prompt "Theme: " --width 30 --lines 4)
+  fuzzel --dmenu --prompt "Theme: " --width 30 --lines 5)
 
 [[ -z "$SELECTED" ]] && exit 0
 
 # Map display name back to key
 NEW_THEME=""
-for key in ayu-dark catppuccin-mocha everforest-dark oxocarbon-dark; do
+for key in ayu-dark catppuccin-mocha everforest-dark oxocarbon-dark gruvbox-light; do
   [[ "$SELECTED" == "${THEME_NAMES[$key]}"* ]] && NEW_THEME="$key" && break
 done
 
@@ -142,11 +305,10 @@ sed -i \
   -e "s/##${COMMENT[$OLD]}/##${COMMENT[$NEW]}/g" \
   ~/.config/hypr/hyprlock.conf
 
-# hyprpaper.conf — swap wallpaper filename
+# hyprpaper.conf + hyprlock.conf — swap wallpaper filename
 if [[ "${WALLPAPER[$OLD]}" != "${WALLPAPER[$NEW]}" ]]; then
-  sed -i \
-    "s/${WALLPAPER[$OLD]}/${WALLPAPER[$NEW]}/g" \
-    ~/.config/hypr/hyprpaper.conf
+  sed -i "s/${WALLPAPER[$OLD]}/${WALLPAPER[$NEW]}/g" ~/.config/hypr/hyprpaper.conf
+  sed -i "s/${WALLPAPER[$OLD]}/${WALLPAPER[$NEW]}/g" ~/.config/hypr/hyprlock.conf
 fi
 
 # ─── Save current theme ───────────────────────────────────────────────────────
