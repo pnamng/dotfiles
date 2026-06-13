@@ -2,7 +2,9 @@ local mainMod = "SUPER"
 local terminal = "ghostty"
 local fileManager = "thunar"
 local menu = "fuzzel"
+local qs = "~/workspaces/lazy-shell/shell.qml"
 
+-- basic
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
@@ -15,6 +17,7 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh"))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/theme-switcher.sh"))
 
+-- workspaces
 for i = 1, 9 do
 	hl.bind(mainMod .. "+ " .. i, hl.dsp.focus({ workspace = i }))
 end
@@ -31,6 +34,7 @@ local dirs = {
 	{ key = "Down", dir = "d" },
 }
 
+-- traverse
 for _, d in ipairs(dirs) do
 	hl.bind(mainMod .. "  + " .. d.key, hl.dsp.focus({ direction = d.dir }))
 end
@@ -107,7 +111,7 @@ hl.bind("CTRL + SHIFT + Print", screenshot("copy area"))
 hl.bind("SUPER + Print", screenshot("--cursor save screen " .. screenshotDir .. "/" .. ts))
 
 -- Shell IPC toggles (Quickshell)
--- hl.bind(mainMod .. " + Space",         hl.dsp.exec_cmd("qs -p $qs ipc call launcher toggle"))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs -p " .. qs .. " ipc call controlcenter toggle"))
 -- hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.exec_cmd("qs -p $qs ipc call controlcenter toggle"))
 -- hl.bind(mainMod .. " + period",        hl.dsp.exec_cmd("qs -p $qs ipc call settings toggle"))
 -- hl.bind(mainMod .. " + N",             hl.dsp.exec_cmd("qs -p $qs ipc call notifications toggleDnd"))
