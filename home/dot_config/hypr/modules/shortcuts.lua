@@ -1,8 +1,8 @@
 local mainMod = "SUPER"
 local terminal = "ghostty"
 local fileManager = "thunar"
-local menu = "fuzzel"
 local qs = "~/workspaces/lazy-shell/shell.qml"
+local menu = "qs -p " .. qs .. " ipc call launcher toggle"
 
 -- basic
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -89,29 +89,44 @@ hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.s
 hl.bind(mainMod .. " + End", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.sh next"))
 hl.bind(mainMod .. " + Home", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.sh prev"))
 
--- Screenshots with grimblast
-local function screenshot(args)
-	return hl.dsp.exec_cmd("grimblast --notify " .. args)
-end
+-- Screenshots: capture with grim, annotate/save/copy with satty
 local ts = "$(date +%Y%m%d_%H%M%S).png"
+local function satty(grimArgs)
+	return hl.dsp.exec_cmd(
+		"grim "
+			.. grimArgs
+			.. " - | satty --filename - --output-filename "
+			.. screenshotDir
+			.. "/"
+			.. ts
+			.. " --early-exit --copy-command wl-copy"
+	)
+end
 
 -- Full screen
-hl.bind("Print", screenshot("save screen " .. screenshotDir .. "/" .. ts))
-hl.bind("SHIFT + Print", screenshot("copy screen"))
+hl.bind("Print", satty(""))
 
 -- Active window
-hl.bind("ALT + Print", screenshot("save active " .. screenshotDir .. "/" .. ts))
-hl.bind("ALT + SHIFT + Print", screenshot("copy active"))
+hl.bind(
+	"ALT + Print",
+	satty('-g "$(hyprctl activewindow -j | jq -r \'"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])"\')"')
+)
 
 -- Selection (region)
-hl.bind("CTRL + Print", screenshot("save area " .. screenshotDir .. "/" .. ts))
-hl.bind("CTRL + SHIFT + Print", screenshot("copy area"))
-
--- With cursor
-hl.bind("SUPER + Print", screenshot("--cursor save screen " .. screenshotDir .. "/" .. ts))
+hl.bind("CTRL + Print", satty('-g "$(slurp)"'))
 
 -- Shell IPC toggles (Quickshell)
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs -p " .. qs .. " ipc call controlcenter toggle"))
+
+-- Alt+Tab window switcher: hold Alt, tap Tab to cycle, release Alt to commit
+local alttab = "qs -p " .. qs .. " ipc call alttab "
+hl.bind("ALT + Tab", hl.dsp.exec_cmd(alttab .. "next"), { repeating = true })
+hl.bind("ALT + SHIFT + Tab", hl.dsp.exec_cmd(alttab .. "prev"), { repeating = true })
+hl.bind("ALT + Escape", hl.dsp.exec_cmd(alttab .. "cancel"))
+-- commit on Alt release. NO modifier here: releasing Alt clears the ALT modmask in
+-- the same event, so a mod-qualified release bind never matches. bare Alt_L fires on
+-- every Alt release, which is harmless since `commit` no-ops unless the switcher is open.
+hl.bind("Alt_L", hl.dsp.exec_cmd(alttab .. "commit"), { release = true })
 -- hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.exec_cmd("qs -p $qs ipc call controlcenter toggle"))
 -- hl.bind(mainMod .. " + period",        hl.dsp.exec_cmd("qs -p $qs ipc call settings toggle"))
 -- hl.bind(mainMod .. " + N",             hl.dsp.exec_cmd("qs -p $qs ipc call notifications toggleDnd"))

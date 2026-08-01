@@ -1,8 +1,8 @@
 local mainMod = SUPER
 local terminal = ghostty
 local fileManager = dolphin
-local menu = fuzzel
 local qs = "~/workspaces/lazy-shell/shell.qml"
+local menu = "qs -p " .. qs .. " ipc call launcher toggle"
 
 require("modules/animations")
 require("modules/env")
