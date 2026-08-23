@@ -14,15 +14,17 @@ require("modules/submaps")
 
 -- Autostart (exec-once equivalent)
 hl.on("hyprland.start", function()
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
+	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'")
+	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("kanshi")
-	hl.exec_cmd("qs -p " .. qs)
+	hl.exec_cmd("waybar")
+	-- hl.exec_cmd("qs -p " .. qs)
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("fcitx5")
 	hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 end)
 
 hl.config({
@@ -85,10 +87,10 @@ hl.config({
 	},
 })
 
-hl.device({
-	name = "epic-mouse-v1",
-	sensitivity = -0.5,
-})
+-- hl.device({
+-- 	name = "epic-mouse-v1",
+-- 	sensitivity = 1,
+-- })
 
 hl.gesture({
 	fingers = 3,
