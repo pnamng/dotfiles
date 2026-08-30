@@ -6,7 +6,6 @@
 }
 
 window#waybar {
-    background: transparent;
     color: #bfbdb6;
     padding: 4px 0;
     transition-property: background-color;

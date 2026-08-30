@@ -33,7 +33,7 @@ hl.config({
 		gaps_out = 20,
 		border_size = 1,
 		col = {
-			active_border = "rgba(39bae6ff)", -- single color, no gradient
+			active_border = "rgba(888888ff)", -- single color, no gradient
 			inactive_border = "rgba(1e2530aa)",
 		},
 		resize_on_border = false,

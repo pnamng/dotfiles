@@ -12,10 +12,9 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("fuzzel"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh"))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/theme-switcher.sh"))
 
 -- workspaces
