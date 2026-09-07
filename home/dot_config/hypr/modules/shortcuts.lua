@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 local terminal = "ghostty"
 local fileManager = "thunar"
-local qs = "~/workspaces/lazy-shell/shell.qml"
+local qs = "~/workspaces/soft-shell/shell.qml"
 local menu = "qs -p " .. qs .. " ipc call launcher toggle"
 
 -- basic

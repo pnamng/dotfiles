@@ -1,7 +1,7 @@
 local mainMod = SUPER
 local terminal = ghostty
 local fileManager = dolphin
-local qs = "~/workspaces/lazy-shell/shell.qml"
+local qs = "~/workspaces/soft-shell/shell.qml"
 local menu = "qs -p " .. qs .. " ipc call launcher toggle"
 
 require("modules/animations")
@@ -17,8 +17,8 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'")
 	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("kanshi")
-	hl.exec_cmd("waybar")
-	-- hl.exec_cmd("qs -p " .. qs)
+	-- hl.exec_cmd("waybar")
+	hl.exec_cmd("qs -p " .. qs)
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("fcitx5")
 	hl.exec_cmd("blueman-applet")
