@@ -10,8 +10,11 @@ plugins=(git zoxide)
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# path
+# paths
 path+=("$HOME/.local/bin")
+
+# aliases
+alias lg="lazygit"
 
 # nvm 
 export NVM_DIR="$HOME/.nvm"

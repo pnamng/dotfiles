@@ -87,10 +87,10 @@ hl.config({
 	},
 })
 
--- hl.device({
--- 	name = "epic-mouse-v1",
--- 	sensitivity = 1,
--- })
+hl.device({
+	name = "cx-wireless-mouse--1k-dongle-mouse",
+	sensitivity = 0,
+})
 
 hl.gesture({
 	fingers = 3,

@@ -1,10 +1,10 @@
 hl.monitor({
-	output = "eDP-1",
-	mode = "1920x1200@60",
-	position = "0x0",
-	scale = "1.25",
-	icc = "/home/froggo/Downloads/R133NW4K_R0.icm",
-	--  disabled = true
+output = "eDP-1",
+mode = "1920x1200@60",
+position = "0x0",
+scale = "1.25",
+icc = "/home/froggo/Downloads/R133NW4K_R0.icm",
+  disabled = true
 })
 
 hl.monitor({
