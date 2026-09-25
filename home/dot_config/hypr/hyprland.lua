@@ -20,11 +20,14 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd("waybar")
 	hl.exec_cmd("qs -p " .. qs)
 	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("hypridle")
 	hl.exec_cmd("fcitx5")
 	hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+	hl.exec_cmd("systemctl --user import-environment GNOME_KEYRING_CONTROL SSH_AUTH_SOCK")
+	hl.exec_cmd("/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh,pkcs11")
 end)
 
 hl.config({
@@ -69,6 +72,7 @@ hl.config({
 	misc = {
 		force_default_wallpaper = 0,
 		disable_hyprland_logo = true,
+		focus_on_activate = true,
 	},
 	input = {
 		kb_layout = "us",
@@ -86,6 +90,12 @@ hl.config({
 		force_zero_scaling = true,
 	},
 })
+
+-- Jump to the workspace of any window that requests attention
+-- (e.g. opening an image from dolphin on ws1 while chromium lives on ws2)
+hl.on("window.urgent", function()
+	hl.dispatch(hl.dsp.focus({ urgent_or_last = true }))
+end)
 
 hl.device({
 	name = "cx-wireless-mouse--1k-dongle-mouse",
