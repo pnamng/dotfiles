@@ -8,8 +8,9 @@ text/plain=dev.zed.Zed.desktop;
 text/x-cmake=dev.zed.Zed.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
-image/x-fuji-raf=org.darktable.darktable.desktop;
-image/jpeg=lximage-qt.desktop;imv-dir.desktop;imv.desktop;
+image/x-fuji-raf=imv.desktop;org.darktable.darktable.desktop;
+image/jpeg=chromium.desktop;imv-dir.desktop;lximage-qt.desktop;imv.desktop;
+image/png=imv-dir.desktop;gmic_qt.desktop;
 
 [Default Applications]
 application/json=dev.zed.Zed.desktop;

@@ -44,7 +44,7 @@ hl.config({
 		layout = "dwindle",
 	},
 	decoration = {
-		rounding = 10,
+		rounding = 0,
 		rounding_power = 2,
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,
@@ -93,13 +93,13 @@ hl.config({
 
 -- Jump to the workspace of any window that requests attention
 -- (e.g. opening an image from dolphin on ws1 while chromium lives on ws2)
-hl.on("window.urgent", function()
-	hl.dispatch(hl.dsp.focus({ urgent_or_last = true }))
-end)
+-- hl.on("window.urgent", function()
+-- 	hl.dispatch(hl.dsp.focus({ urgent_or_last = true }))
+-- end)
 
 hl.device({
 	name = "cx-wireless-mouse--1k-dongle-mouse",
-	sensitivity = 0,
+	sensitivity = -0.5,
 })
 
 hl.gesture({
