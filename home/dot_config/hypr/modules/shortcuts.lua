@@ -78,8 +78,8 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true, repeating = true })
 
 -- Playerctl (custom script)
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.sh play-pause"))
@@ -102,18 +102,11 @@ hl.bind("CTRL + Print", hl.dsp.exec_cmd(shot .. "region"))
 -- (Super+Tab used to toggle the settings window: qs ipc call controlcenter toggle.)
 local wstab = "qs -p " .. qs .. " ipc call wstab "
 -- submap_universal: while the switcher is drawn the shell puts Hyprland in the "switcher"
--- submap (below), so that Super+arrows reach the switcher instead of moving focus. Tab has
+-- submap (submaps.lua), so that Super+arrows reach the switcher instead of moving focus. Tab has
 -- to keep working in there.
 hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd(wstab .. "next"), { repeating = true, submap_universal = true })
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.exec_cmd(wstab .. "prev"), { repeating = true, submap_universal = true })
 hl.bind("Super_L", hl.dsp.exec_cmd(wstab .. "commit"), { release = true, transparent = true, ignore_mods = true, non_consuming = true, submap_universal = true })
--- Entered and left by soft-shell (SwitcherState), never by a key. It binds nothing but a
--- way out, which is the point: with no Super+arrow binds in force, those keys go to the
--- switcher, which has the keyboard. Escape leaves it and the shell cancels the switch.
-hl.define_submap("switcher", function()
-	hl.bind("Escape", hl.dsp.submap("reset"))
-	hl.bind(mainMod .. " + Escape", hl.dsp.submap("reset"))
-end)
 
 -- Alt+Tab window switcher: hold Alt, tap Tab to cycle, release Alt to commit
 local alttab = "qs -p " .. qs .. " ipc call alttab "

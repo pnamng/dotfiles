@@ -30,3 +30,17 @@ hl.window_rule({
 	match = { class = "chromium" },
 	workspace = "2",
 })
+
+-- Everything on a special workspace floats: a window opened there, and one
+-- sent there (SUPER + SHIFT + S). Done from events rather than a window rule
+-- because `float` in a rule is only read when a window opens, so a rule
+-- cannot reach a window that is moved in later.
+local function float_on_special(window, workspace)
+	workspace = workspace or window.workspace
+	if workspace and workspace.special then
+		hl.dispatch(hl.dsp.window.float({ action = "enable", window = window }))
+	end
+end
+
+hl.on("window.open", float_on_special)
+hl.on("window.move_to_workspace", float_on_special)

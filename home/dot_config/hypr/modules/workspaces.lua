@@ -3,3 +3,6 @@
 
 -- workspace = 10, gapsout:12 12 12 12
 hl.workspace_rule({ workspace = "10", gaps_out = { top = 12, right = 12, bottom = 12, left = 12 } })
+
+
+hl.window_rule({ match = { workspace = "1" }, float = true })

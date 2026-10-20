@@ -72,6 +72,10 @@ hl.config({
 	misc = {
 		force_default_wallpaper = 0,
 		disable_hyprland_logo = true,
+		-- the dark casing, as qs-greeter leaves the screen and the console
+		-- holds it: the session's first frames continue the handoff instead
+		-- of breaking it with black (see qs-greeter's CONTEXT.md, "Handoff")
+		background_color = "rgb(1c1c1b)",
 		focus_on_activate = true,
 	},
 	input = {

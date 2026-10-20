@@ -3,7 +3,7 @@ font-size = 10
 window-padding-x = 10
 window-padding-y = 10
 
-theme = Ayu Mirage
+# theme = Ayu
 background-opacity = 0.8 
 
 freetype-load-flags = no-force-autohint
@@ -11,3 +11,26 @@ freetype-load-flags = no-force-autohint
 adjust-cell-width = "-5%"
 adjust-cell-height = "-5%"
 keybind = shift+enter=text:\x1b\r
+
+background = #121212
+foreground = #d8d8d4
+cursor-color = #ff5a1f
+selection-background = #2e2e2e
+selection-foreground = #ffffff
+
+palette = 0=#1c1c1c
+palette = 1=#ff5a1f
+palette = 2=#3fb950
+palette = 3=#f2c230
+palette = 4=#3a7bd5
+palette = 5=#b0b0b0
+palette = 6=#7fb8c8
+palette = 7=#d8d8d4
+palette = 8=#4a4a4a
+palette = 9=#ff7a45
+palette = 10=#5fd36f
+palette = 11=#ffd84d
+palette = 12=#5a9bf0
+palette = 13=#cfcfcf
+palette = 14=#9fd2e0
+palette = 15=#ffffff
