@@ -5,29 +5,29 @@ hl.window_rule({
 })
 
 -- xwayland/floating popup no-focus rule
-hl.window_rule({
-	name = "test",
-	match = {
-		class = "^$",
-		title = "^$",
-		xwayland = true,
-		float = true,
-		fullscreen = false,
-		pin = false,
-	},
-	no_focus = true,
-})
+-- hl.window_rule({
+-- 	name = "test",
+-- 	match = {
+-- 		class = "^$",
+-- 		title = "^$",
+-- 		xwayland = true,
+-- 		float = true,
+-- 		fullscreen = false,
+-- 		pin = false,
+-- 	},
+-- 	no_focus = true,
+-- })
 
 -- App workspace assignments
 hl.window_rule({
 	name = "obsidian",
 	match = { class = "obsidian" },
-	workspace = "1",
+	workspace = "3",
 })
 
 hl.window_rule({
 	name = "chromium",
-	match = { class = "chromium" },
+	match = { class = "chromium", float = false },
 	workspace = "2",
 })
 

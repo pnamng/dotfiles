@@ -1,8 +1,6 @@
 local mainMod = SUPER
 local terminal = ghostty
 local fileManager = dolphin
-local qs = "~/workspaces/soft-shell/shell.qml"
-local menu = "qs -p " .. qs .. " ipc call launcher toggle"
 
 require("modules/animations")
 require("modules/env")
@@ -10,16 +8,15 @@ require("modules/monitors")
 require("modules/shortcuts")
 require("modules/windows")
 require("modules/workspaces")
-require("modules/submaps")
 
 -- Autostart (exec-once equivalent)
 hl.on("hyprland.start", function()
 	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'")
 	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
-	hl.exec_cmd("kanshi")
+	-- hl.exec_cmd("kanshi")
 	-- hl.exec_cmd("waybar")
-	hl.exec_cmd("qs -p " .. qs)
-	hl.exec_cmd("hyprpaper")
+	-- hl.exec_cmd("qs -p ~/workspaces/soft-shell/shell.qml") -- soft-shell, replaced by noctalia
+	hl.exec_cmd("noctalia --daemon")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("fcitx5")
 	hl.exec_cmd("blueman-applet")
@@ -44,7 +41,7 @@ hl.config({
 		layout = "dwindle",
 	},
 	decoration = {
-		rounding = 0,
+		rounding = 10,
 		rounding_power = 2,
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,

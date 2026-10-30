@@ -1,8 +1,7 @@
 local mainMod = "SUPER"
 local terminal = "ghostty"
 local fileManager = "thunar"
-local qs = "~/workspaces/soft-shell/shell.qml"
-local menu = "qs -p " .. qs .. " ipc call launcher toggle"
+local menu = "noctalia msg panel-toggle launcher"
 
 -- basic
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -14,7 +13,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("fuzzel"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia msg session lock"))
 
 -- workspaces
 for i = 1, 9 do
@@ -54,8 +53,6 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Lid close → lock
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 
 -- Multimedia keys
 hl.bind(
@@ -86,45 +83,10 @@ hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.s
 hl.bind(mainMod .. " + End", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.sh next"))
 hl.bind(mainMod .. " + Home", hl.dsp.exec_cmd("~/.config/hypr/scripts/player.sh prev"))
 
--- Screenshots: routed through the shell so the bar button and these
--- keybinds share one code path. grim/slurp/wl-copy, the save path and the
--- notification all live in modules/screenshot/ScreenshotState.qml.
--- (This replaced a grim | satty pipeline; satty is not installed.)
-local shot = "qs -p " .. qs .. " ipc call screenshot "
+-- Screenshots (noctalia)
+hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen"))
+hl.bind("ALT + Print", hl.dsp.exec_cmd("noctalia msg screenshot-window"))
+hl.bind("CTRL + Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
 
-hl.bind("Print", hl.dsp.exec_cmd(shot .. "full"))
-hl.bind("ALT + Print", hl.dsp.exec_cmd(shot .. "window"))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd(shot .. "region"))
-
--- Shell IPC toggles (Quickshell)
--- Super+Tab workspace switcher: hold Super, tap Tab to cycle workspaces, release Super to
--- commit. Same shape as Alt+Tab below, and the release bind needs the same three flags.
--- (Super+Tab used to toggle the settings window: qs ipc call controlcenter toggle.)
-local wstab = "qs -p " .. qs .. " ipc call wstab "
--- submap_universal: while the switcher is drawn the shell puts Hyprland in the "switcher"
--- submap (submaps.lua), so that Super+arrows reach the switcher instead of moving focus. Tab has
--- to keep working in there.
-hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd(wstab .. "next"), { repeating = true, submap_universal = true })
-hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.exec_cmd(wstab .. "prev"), { repeating = true, submap_universal = true })
-hl.bind("Super_L", hl.dsp.exec_cmd(wstab .. "commit"), { release = true, transparent = true, ignore_mods = true, non_consuming = true, submap_universal = true })
-
--- Alt+Tab window switcher: hold Alt, tap Tab to cycle, release Alt to commit
-local alttab = "qs -p " .. qs .. " ipc call alttab "
-hl.bind("ALT + Tab", hl.dsp.exec_cmd(alttab .. "next"), { repeating = true })
-hl.bind("ALT + SHIFT + Tab", hl.dsp.exec_cmd(alttab .. "prev"), { repeating = true })
-hl.bind("ALT + Escape", hl.dsp.exec_cmd(alttab .. "cancel"))
--- commit on Alt release. Three flags, each needed (read in Hyprland 0.56.2's
--- KeybindManager.cpp):
---   transparent    once the Alt+Tab bind fires, every other bind on a key still held is
---                  "shadowed" and skipped; Alt_L is still held, so without this the release
---                  never ran after a Tab -- which is the only time it matters.
---   ignore_mods    Hyprland's modmask still has ALT set while Alt's own release is handled,
---                  so an unqualified bind does not match there either.
---   non_consuming  a release bind otherwise swallows the key's *press* from applications.
--- It fires on every Alt release, which is harmless: `commit` no-ops unless a switch is on.
-hl.bind("Alt_L", hl.dsp.exec_cmd(alttab .. "commit"), { release = true, transparent = true, ignore_mods = true, non_consuming = true })
--- hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.exec_cmd("qs -p $qs ipc call controlcenter toggle"))
--- hl.bind(mainMod .. " + period",        hl.dsp.exec_cmd("qs -p $qs ipc call settings toggle"))
--- hl.bind(mainMod .. " + N",             hl.dsp.exec_cmd("qs -p $qs ipc call notifications toggleDnd"))
--- hl.bind(mainMod .. " + I",             hl.dsp.exec_cmd("qs -p $qs ipc call idle toggle"))
--- hl.bind(mainMod .. " + SHIFT + R",     hl.dsp.exec_cmd("qs -p $qs ipc call record toggle"))
+-- soft-shell's binds (screenshots, Super+Tab / Alt+Tab switchers) are disabled; the
+-- originals are in shortcuts.lua.bak-softshell.

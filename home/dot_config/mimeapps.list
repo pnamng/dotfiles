@@ -9,7 +9,7 @@ text/x-cmake=dev.zed.Zed.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 image/x-fuji-raf=imv.desktop;org.darktable.darktable.desktop;
-image/jpeg=chromium.desktop;imv-dir.desktop;lximage-qt.desktop;imv.desktop;
+image/jpeg=imv-dir.desktop;chromium.desktop;lximage-qt.desktop;imv.desktop;
 image/png=imv-dir.desktop;gmic_qt.desktop;
 
 [Default Applications]
